@@ -1,0 +1,26 @@
+
+RewriteEngine On
+RewriteBase /
+ErrorDocument 404 /404
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?route=$1 [L]
+
+
+
+
+
+# Without specific details about the issue you're encountering, it's hard to say what might be going wrong. However, here are a few common issues that might cause problems with Apache's mod_rewrite and .htaccess:
+
+# 1. **Incorrect RewriteRule syntax**: The syntax for rewrite rules can be tricky. Make sure you're using the correct syntax and flags for your needs.
+
+# 2. **.htaccess file not being read**: If your .htaccess file isn't being read, it might be because the `AllowOverride` directive is set to `None` in your Apache configuration. It needs to be set to `All` or at least `FileInfo` for .htaccess files to be used.
+
+# 3. **Incorrect file permissions**: Apache needs to be able to read your .htaccess file. Make sure the file permissions are set correctly.
+
+# 4. **RewriteBase directive**: If your application is located in a subdirectory, you might need to use the `RewriteBase` directive to specify the path to your application.
+
+# 5. **Incorrectly formed URLs**: If your rewrite rules are based on a specific URL structure, make sure the URLs you're using match that structure.
+
+# If you're still having trouble, could you provide more details about the issue? What is the exact error message you're seeing? What does your .htaccess file look like? What are the rewrite rules you're using? Please remember to redact any sensitive information before sharing.
